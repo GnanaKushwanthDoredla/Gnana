@@ -1,10 +1,24 @@
 <html>
 <head>
-<title>
-details form
-</title>
+<script>
+function validateform()
+{
+var x=document.forms["form"]["contact number"].value;
+var y=document.forms["forms"]["subjects"].value;
+if(x == "")
+{
+alert("contact number should be filled");
+return false;
+}
+elif(y=="")
+{
+alert("atleast one should be selected");
+return false;}
+}
+</script>
+<link rel="Stylesheets" href="stylesheets.css">
 <body>
-<form action="display.php" method="post">
+<form action = "display.php" name="form" method="post" onsubmit="return validateForm()">
 <label>Name:</label><br>
 <input type="text" name="Name"><br>
 <label>Phone number</label><br>

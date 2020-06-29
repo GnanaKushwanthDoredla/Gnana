@@ -1,0 +1,40 @@
+<html>
+<body>
+<table id="mytable">
+</table>
+<button onclick="mytablecreate()">create</button>
+<script>
+function mytablecreate()
+{
+var subjects = ["Maths","science","social"];
+var marks = [100,100,100];
+var totalmarks=0,average=0;
+var i;
+for(i=0;i<marks.length;i++)
+{
+totalmarks = totalmarks + marks[i];
+}
+average = totalmarks/marks.length;
+var table = document.getElementById("mytable");
+var j;
+for(j=0;j<marks.length;j++){
+var row = table.insertRow(j);
+var cell1 = row.insertCell(0);
+var cell2 = row.insertCell(1);
+cell1.innerHTML = subjects[j];
+cell2.innerHTML = marks[j];
+}
+var row = table.insertRow(marks.length);
+var cell1 = row.insertCell(0);
+var cell2 = row.insertCell(1);
+cell1.innerHTML = "totalmarks";
+cell2.innerHTML = totalmarks;
+var row = table.insertRow((marks.length)+1)
+var cell1 = row.insertCell(0);
+var cell2 = row.insertCell(1);
+cell1.innerHTML = "average";
+cell2.innerHTML = average;
+}
+</script>
+</body>
+</html>
