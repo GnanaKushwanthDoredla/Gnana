@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function errorhandle1()
+{
+var message,x; 
+message=document.getElementById("demo1");
+message.innerHTML="";
+x=document.getElementById("myinput").value;
+try
+{
+if(x == "") throw 'no value entered';
+if(isNaN(x)) throw 'not a number';
+x = Number(x);
+if(x < 0) throw 'negative number';
+if(x > 0) throw 'positive number';
+}
+catch(err)
+{
+message.innerHTML = "error is " +err;
+}
+finally
+{
+documnet.getElementById("myinput").value = "";
+}
+}
+</script>
+</head>
+<body>
+<input type="text" id="myinput">
+<button onclick="errorhandle1()">check</button>
+<p1 id="demo1"></p>
+</body>
+</html>

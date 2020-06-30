@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myfunc()
+{
+var text;
+var num = document.getElementById("myinput").value;
+switch(true){
+case num <= 10:
+text = "value less than 10";
+break;
+case num > 10 && num <= 100:
+text = "value between 10 and 100";
+break;
+case num>100:
+text = "value greater than 100";
+break;
+default:
+text = "invalid value";
+break;
+}
+document.getElementById("demo").innerHTML=text;
+}
+function fibanocci()
+{
+
+var value=document.getElementById("myinput1").value;
+var a = 0;
+var b = 1;
+var c;
+for(i=1;i<=value;i++)
+{
+document.write(a);
+document.write(" ");
+c = a + b;
+a = b;
+b = c;
+}
+}
+function errorhandle1()
+{
+var message,x; 
+message=document.getElementById("demo1");
+message.innerHTML="";
+x=document.getElementById("myinput1").value;
+try
+{
+if(x == "") throw 'no value entered';
+if(isNaN(x)) throw 'not a number';
+x = Number(x);
+if(x < 0) throw 'negative number';
+if(x > 0) throw 'positive number';
+}
+catch(err)
+{
+message.innerHTML = "error is " +err;
+}
+finally
+{
+documnet.getElementById("myinput").value = "";
+}
+}
+</script>
+</head>
+<body>
+<input type="text" id="myinput"></br>
+<button onclick="myfunc()">click it!</button>
+<button onclick="errorhandle1()">check</button></br>
+<input type="number" id="myinput1">
+<button onclick="fibanocci()">calculate</button></br>
+<p id="demo"></p>
+<p1 id="demo1"></p1>
+</body>
+</html>

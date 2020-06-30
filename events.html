@@ -1,0 +1,45 @@
+<!DOCTYPE htl>
+<html>
+<head>
+<script>
+function myload()
+{
+alert("Page is loaded")
+}
+function onclickfunc()
+{
+var x = document.getElementById("demo").innerHTML=Date();
+}
+function onmouseoverfunc()
+{
+alert("mouseover")
+}
+function onmouseoutfunc()
+{
+alert("mouseout")
+}
+function myfunction()
+{
+var y=document.getElementById("myoption").value;
+document.getElementById("demo1").innerHTML="you selected"+y;
+}
+function mykeyfunc()
+{
+alert("you pressede a key on keyboard")
+}
+</script>
+</head>
+<body onload="myload()">
+<button onclick="onclickfunc()">the time is</button>
+<select  id="myoption" onchange="myfunction()">
+<option value="hi">hi</option>
+<option value="hello">hello</option>
+</select>
+<input type="text" onkeydown="mykeyfunc()"></input>
+<div onmouseover="onmouseoverfunc()" onmouseout="onmouseoutfunc()">
+<h2> hello you are inside the division</h2>
+</div>
+<p id="demo"></p>
+<p1 id="demo1"></p1>
+</body>
+</html>
