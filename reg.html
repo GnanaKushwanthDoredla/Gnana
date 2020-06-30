@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validate()
+{
+var x = document.forms["myform]["fname"].value;
+var y = document.forms["myform"]["num"].value;
+var z = document.forms["myform"]["subjects"].value;
+if(x=="")
+{
+alert("Name must be filled out");
+return false;
+}
+else if(!y.match(/^\d{10}$/))
+{
+alert("phone number shuold contain only numbers and should be only 10 digits");
+return false;
+}
+else if(document.myform.subjects.checked)
+{
+alert("selected")
+}
+else{
+alert("check checkbox")
+}
+}
+</script>
+</head>
+<body>
+<form name="myform" action="display.php" onsubmit="return validate()" method="post">
+Name:<input type="text" name="fname" required></br>
+Phone No:<input type="number" name="number" required></br>
+subjects:
+<input type="checkbox" name="subjects" value="subjects">HTML</br>
+<input type="checkbox" name="subject" value="subjects">CSS</br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>

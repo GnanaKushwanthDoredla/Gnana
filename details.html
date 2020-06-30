@@ -1,28 +1,29 @@
 <html>
 <head>
-<script>
-function validateform()
+<script type="text/javascript">
+function validate()
 {
-var x=document.forms["form"]["contact number"].value;
-var y=document.forms["forms"]["subjects"].value;
-if(x == "")
+if(document.myform.contact.value=="")
 {
-alert("contact number should be filled");
+alert("please enter your mobile number");
+document.myform.contact.focus();
 return false;
 }
-elif(y=="")
+if(document.myform.subjects.value=="")
 {
-alert("atleast one should be selected");
-return false;}
+alert("please select atleast one subject")
+document.myform.subjects.focus();
+return false;
+}
 }
 </script>
-<link rel="Stylesheets" href="stylesheets.css">
+</head>
 <body>
-<form action = "display.php" name="form" method="post" onsubmit="return validateForm()">
+<form name="myform" method="post" onsubmit="return validateForm()">
 <label>Name:</label><br>
 <input type="text" name="Name"><br>
 <label>Phone number</label><br>
-<input type="text" name="contact number"><br>
+<input type="text" name="contact"><br>
 <label>Degree:</label><br>
 <input type="radio" name="course" value="btech">
 <label>Bachelor's</label><br>
