@@ -1,0 +1,24 @@
+<html>
+<head>
+<style>
+#q{
+background-color:blue;
+}</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#b1").click(function(){
+$("p").hide(1000);
+});
+$("#b2").click(function(){
+$("p").css("display","block");
+});
+});
+</script>
+</head>
+<body>
+<p id="q">this will disappear if you click the button</p></br>
+<button id="b1">clickme</button>
+<button id="b2">display</button>
+</body>
+</html>
