@@ -1,0 +1,29 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#btn1").click(function(){
+$("p").fadeIn();
+});
+$("#btn2").click(function(){
+$("p").fadeOut();
+});
+});
+</script>
+<style>
+p{
+color:white;
+background-color:black;
+text-align:center;
+border-style:solid;
+border-color:yellow;
+}
+</style>
+</head>
+<body>
+<p>This is a example of fadein and fadeout functions of jquery</p>
+<button id="btn1">fadein</button>
+<button id="btn2">fadeout</button>
+</body>
+</html>
